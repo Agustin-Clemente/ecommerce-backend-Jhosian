@@ -8,7 +8,12 @@ const orderRoutes = require("./routes/order.routes")
 
 app.use(express.json ())
 
-app.use(cors())
+const corsOptions = {
+    origin: 'https://front-jhosian.netlify.app'
+};
+
+// Aplica el middleware de CORS con las opciones
+app.use(cors(corsOptions));
 
 app.use("/uploads", express.static("uploads"))
 
